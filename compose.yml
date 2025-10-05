@@ -1,0 +1,67 @@
+version: "3.9"
+
+services:
+  microservicio1:
+    container_name: microservicio1_c
+    image: faridaquino/microservicio1:v2
+    env_file:
+      - .env1
+    ports:
+      - "8084:8081"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8081/api/v1/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: always
+
+  microservicio2:
+    container_name: microservicio2_c
+    image: faridaquino/microservicio2
+    env_file:
+      - .env2
+    ports:
+      - "8083:8005"
+    depends_on:
+      microservicio1:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8005/"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: always
+
+  microservicio3:
+    container_name: microservicio3_c
+    image: gerardiruri31utec/cloud-microservicio3:1.1
+    env_file:
+      - .env3
+    ports:
+      - "8082:8080"
+    depends_on:
+      microservicio2:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: always
+
+  microservicio4:
+    container_name: microservicio4_c
+    image: faridaquino/microservicio4:v2
+    env_file:
+      - .env4
+    ports:
+      - "8081:8080"
+    depends_on:
+      microservicio3:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: always
