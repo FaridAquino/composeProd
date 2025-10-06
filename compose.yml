@@ -12,6 +12,7 @@ services:
       test: ["CMD", "curl", "-f", "http://localhost:8081/api/v1/health"]
       interval: 10s
       timeout: 5s
+      start_period: 30s
       retries: 5
     restart: always
 
@@ -29,6 +30,7 @@ services:
       test: ["CMD", "curl", "-f", "http://localhost:8005/"]
       interval: 10s
       timeout: 5s
+      start_period: 30s
       retries: 5
     restart: always
 
@@ -81,5 +83,6 @@ services:
       timeout: 5s
       retries: 5
     restart: always
+
 
 
