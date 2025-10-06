@@ -9,7 +9,7 @@ services:
     ports:
       - "8084:8081"
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8081/api/v1/health"]
+      test: ["CMD", "curl", "-f", "http://localhost:8081/api/v1/auth/health"]
       interval: 10s
       timeout: 5s
       start_period: 30s
@@ -83,6 +83,7 @@ services:
       timeout: 5s
       retries: 5
     restart: always
+
 
 
 
