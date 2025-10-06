@@ -3,7 +3,7 @@ version: "3.9"
 services:
   microservicio1:
     container_name: microservicio1_c
-    image: faridaquino/microservicio1:v2
+    image: faridaquino/microservicio1:v4
     env_file:
       - .env1
     ports:
@@ -17,7 +17,7 @@ services:
 
   microservicio2:
     container_name: microservicio2_c
-    image: faridaquino/microservicio2
+    image: faridaquino/microservicio2:v2
     env_file:
       - .env2
     ports:
@@ -51,7 +51,7 @@ services:
 
   microservicio4:
     container_name: microservicio4_c
-    image: faridaquino/microservicio4:v2
+    image: faridaquino/microservicio4:v4
     env_file:
       - .env4
     ports:
@@ -81,4 +81,5 @@ services:
       timeout: 5s
       retries: 5
     restart: always
+
 
