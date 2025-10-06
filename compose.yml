@@ -65,3 +65,19 @@ services:
       timeout: 5s
       retries: 5
     restart: always
+  microservicio5:
+    container_name: microservicio5_c
+    image: juanvelo/microservicio5-orchestrator
+    env_file:
+      - .env5
+    ports:
+      - "8085:8005"
+    depends_on:
+      microservicio3:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8005/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: always
