@@ -68,7 +68,7 @@ services:
     
   microservicio5:
     container_name: microservicio5_c
-    image: faridaquino/microservicio5:v1
+    image: faridaquino/microservicio5:v2
     env_file:
       - .env5
     ports:
@@ -77,7 +77,7 @@ services:
       microservicio4:
         condition: service_healthy
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8005/"]
+      test: ["CMD", "curl", "-f", "http://localhost:8005/ms5/"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -99,6 +99,7 @@ services:
       timeout: 5s
       retries: 5
     restart: always
+
 
 
 
