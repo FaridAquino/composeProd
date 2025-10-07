@@ -65,6 +65,7 @@ services:
       timeout: 5s
       retries: 5
     restart: always
+    
   microservicio5:
     container_name: microservicio5_c
     image: faridaquino/microservicio5:v1
@@ -81,6 +82,7 @@ services:
       timeout: 5s
       retries: 5
     restart: always
+    
   microservicio6:
     container_name: microservicio6_c
     image: faridaquino/microservicio6:latest
@@ -97,6 +99,7 @@ services:
       timeout: 5s
       retries: 5
     restart: always
+
 
 
 
