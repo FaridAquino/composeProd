@@ -1,13 +1,13 @@
 services:
   microservicio1:
     container_name: microservicio1_c
-    image: faridaquino/microservicio1:v4
+    image: faridaquino/microservicio1:v5
     env_file:
       - .env1
     ports:
       - "8084:8081"
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8081/api/v1/auth/health"]
+      test: ["CMD", "curl", "-f", "http://localhost:8081/ms1/api/v1/auth/health"]
       interval: 10s
       timeout: 5s
       start_period: 30s
@@ -99,6 +99,7 @@ services:
       timeout: 5s
       retries: 5
     restart: always
+
 
 
 
