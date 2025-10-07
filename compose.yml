@@ -85,7 +85,7 @@ services:
     
   microservicio6:
     container_name: microservicio6_c
-    image: faridaquino/microservicio6:v2
+    image: faridaquino/microservicio6:v4
     env_file:
       - .env6
     ports:
@@ -94,11 +94,12 @@ services:
       microservicio5:
         condition: service_healthy
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8000/"]
+      test: ["CMD", "curl", "-f", "http://localhost:8000/ms6/"]
       interval: 10s
       timeout: 5s
       retries: 5
     restart: always
+
 
 
 
