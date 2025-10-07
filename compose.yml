@@ -81,7 +81,7 @@ services:
       timeout: 5s
       retries: 5
     restart: always
-    microservicio6:
+  microservicio6:
     container_name: microservicio6_c
     image: faridaquino/microservicio6:latest
     env_file:
@@ -97,6 +97,7 @@ services:
       timeout: 5s
       retries: 5
     restart: always
+
 
 
 
