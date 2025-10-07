@@ -73,7 +73,7 @@ services:
     ports:
       - "8085:8005"
     depends_on:
-      microservicio3:
+      microservicio4:
         condition: service_healthy
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8005/"]
@@ -97,6 +97,7 @@ services:
       timeout: 5s
       retries: 5
     restart: always
+
 
 
 
