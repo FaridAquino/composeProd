@@ -34,7 +34,7 @@ services:
 
   microservicio3:
     container_name: microservicio3_c
-    image: faridaquino/microservicio3:v1
+    image: faridaquino/microservicio3:v2
     env_file:
       - .env3
     ports:
@@ -99,6 +99,7 @@ services:
       timeout: 5s
       retries: 5
     restart: always
+
 
 
 
