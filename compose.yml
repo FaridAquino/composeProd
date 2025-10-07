@@ -16,7 +16,7 @@ services:
 
   microservicio2:
     container_name: microservicio2_c
-    image: faridaquino/microservicio2:v5
+    image: faridaquino/microservicio2:v6
     env_file:
       - .env2
     ports:
@@ -99,6 +99,7 @@ services:
       timeout: 5s
       retries: 5
     restart: always
+
 
 
 
