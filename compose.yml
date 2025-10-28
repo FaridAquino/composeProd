@@ -51,7 +51,7 @@ services:
 
   microservicio4:
     container_name: microservicio4_c
-    image: faridaquino/microservicio4:v5
+    image: faridaquino/microservicio4:v6
     env_file:
       - .env4
     ports:
@@ -99,6 +99,7 @@ services:
       timeout: 5s
       retries: 5
     restart: always
+
 
 
 
