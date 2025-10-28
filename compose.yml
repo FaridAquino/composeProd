@@ -85,7 +85,7 @@ services:
     
   microservicio6:
     container_name: microservicio6_c
-    image: faridaquino/microservicio6:v7
+    image: faridaquino/microservicio6:v8
     env_file:
       - .env6
     ports:
@@ -99,6 +99,7 @@ services:
       timeout: 5s
       retries: 5
     restart: always
+
 
 
 
